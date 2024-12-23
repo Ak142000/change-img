@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div>
+       <img src="https://th.bing.com/th/id/OIP.vggFhcDaZAZ0BLI1MKgUzgHaD-?w=280&h=180&c=7&r=0&o=5&pid=1.7">
+       <p>nature</p>
+    </div>
+    <button onclick="changeimg()">click</button>
+    <script>
+        let picture=document.getElementsByTagName("img");
+        console.log(picture);
+        let para=document.getElementsByTagName("p")
+        let path=[{
+           url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6-DQF2pBwNFV9KzPafu9RghrNF1tZ8J3AA&s",
+            name :"tiger"},
+            {
+               url: "https://th.bing.com/th/id/OIP.-4RJk-TNzc0Ulbu6-Ogx_AHaFR?w=258&h=182&c=7&r=0&o=5&pid=1.7",
+                name:"apple"
+            },
+            {
+               url: "http://ts2.mm.bing.net/th?id=OIP.mTDkfkEIOodOIubRsU_BQQHaEK&pid=15.1",
+                name:"eagle"
+            }
+        ];
+        function changeimg(){
+            // for (let i=0;i<picture.length;i++){
+             
+            //     path[Math.round(Math.random()*path.length)]?picture.src=path[Math.round(Math.random()*path.length)]:""
+            // }
+
+            let rand=path[Math.floor(Math.random()*path.length)];
+            
+            console.log(rand);
+
+            picture[0].src=rand.url
+            para[0].textContent=rand.name
+            
+            
+        }
+    </script>
+</body>
+</html>

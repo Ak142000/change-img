@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin:0%;
+            padding: 0%;
+            box-sizing:border-box;
+        }
+     .container{
+        width: 80vw;
+        margin: auto;
+     }
+     #card{
+        display: flex;
+        flex-wrap: wrap;  
+        width: 100%;
+     }
+
+     .cards{
+        width: 33%;
+        padding: 1%;
+     }
+     .cards img{
+        width: 100%;
+     }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <input placeholder="enter a name">
+    <br><br>
+    <input placeholder="enter a pic path">
+    <button onclick="cl()">submit</button>
+    <div id="card">
+
+    </div>
+</div>
+
+    <script>
+        
+        
+        function cl(){
+            let userInput=document.getElementsByTagName("input");
+            let div=document.getElementById("card")
+            if(userInput[0].value!==""&& userInput[1].value!==""){
+               let pdiv=document.createElement("div");
+               pdiv.classList.add("cards")
+               let nametag=document.createElement("p");
+               nametag.textContent=userInput[0].value;
+               let image=document.createElement("img");
+               image.src=userInput[1].value;
+               pdiv.appendChild(nametag);
+               pdiv.appendChild(image);
+               div.appendChild(pdiv);
+               userInput[0].value=""
+               userInput[1].value=""
+                         
+             }
+            }
+    </script>
+</body>
+</html>
